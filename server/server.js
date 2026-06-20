@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -12,10 +13,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth",authRoutes);
+app.use("/api/users",userRoutes);
 
 app.get("/",(req,res)=>{
   res.send("Graphology API Running");
 });
+
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,0 +1,10 @@
+import express from "express";
+import { verifyToken } from "../middleware/authMiddleware.js";
+import { getProfile } from "../controllers/userController.js";
+
+
+const router = express();
+
+router.get("/profile",verifyToken,getProfile);
+
+export default router;

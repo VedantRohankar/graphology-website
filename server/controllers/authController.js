@@ -22,7 +22,11 @@ export const register = async (req,res)=>{
     );
      res.status(200).json({
       message:"User Registered Successfully",
-      user,
+        user: {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        },
      });
 
   } catch (error) {
