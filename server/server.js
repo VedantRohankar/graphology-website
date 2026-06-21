@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
+app.use("/api/admin",adminRoutes);
 
 app.get("/",(req,res)=>{
   res.send("Graphology API Running");

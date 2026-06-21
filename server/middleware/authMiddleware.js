@@ -17,7 +17,10 @@ export const verifyToken = (req,res,next)=>{
     const decoded = jwt.verify(token,process.env.JWT_SECRET);
 
   //Store user data in request
-  req.user = decoded;
+  req.user = {
+    id:decoded.id,
+    role:decoded.role,
+  };
 
   next();
 
