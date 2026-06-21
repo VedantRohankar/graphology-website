@@ -21,3 +21,14 @@ export const findUserEmail = async (email)=>{
 
   return result.rows[0];
 };
+
+export const getUserById = async(id)=>{
+  console.log("Fetching User from DataBase!");
+  
+  const result = await db.query(`
+    SELECT id,username,email,created_at
+    FROM users
+    Where id = $1`,[id]
+  );
+  return result.rows[0];
+};

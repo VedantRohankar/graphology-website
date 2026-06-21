@@ -3,7 +3,7 @@ import { verifyToken } from "../middleware/authMiddleware.js";
 import { getProfile } from "../controllers/userController.js";
 
 
-const router = express();
+const router = express.Router();
 
 router.get("/profile",verifyToken,getProfile);
 
